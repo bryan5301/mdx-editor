@@ -1,9 +1,9 @@
-import { MDXEditor } from '@mdxeditor/editor'
-import '@mdxeditor/editor/style.css'
+import { BrowserRouter as Router, Route, useParams } from 'react-router-dom';
+import Editor from './Editor';
 
 function App() {
   return (
-    <MDXEditor markdown='Hello world' />
+<div></div>
   );
 }
 
