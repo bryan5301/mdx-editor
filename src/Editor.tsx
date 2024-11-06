@@ -14,7 +14,7 @@ const imageUploadHandler = async (image: File) => {
   const formData = new FormData();
   formData.append('image', image);
 
-  const response = await fetch('http://localhost:8007/cm/servlet/SaveWebpartImagesServlet', {
+  const response = await fetch('http://cm.aggflow.com/cm/servlet/SaveWebpartImagesServlet', {
     method: 'POST',
     body: formData,
   });
@@ -35,7 +35,7 @@ function Editor() {
   useEffect(() => {
     const fetchHtmlContent = async () => {
       try {
-        const response = await fetch(`http://localhost:8007/cm/servlet/GetWebpartMdxServlet?id=${id}`);
+        const response = await fetch(`http://cm.aggflow.com/cm/servlet/GetWebpartMdxServlet?id=${id}`);
         if (response.ok) {
             const task_data:{[key:string]:any} = await response.json();
             if(task_data['html'] !== undefined){
@@ -90,7 +90,7 @@ function Editor() {
 
   const sendData = async () => {
     try {
-      const response = await fetch('http://localhost:8007/cm/servlet/UpdateWebpartMdxServlet', {
+      const response = await fetch('http://cm.aggflow.com/cm/servlet/UpdateWebpartMdxServlet', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
